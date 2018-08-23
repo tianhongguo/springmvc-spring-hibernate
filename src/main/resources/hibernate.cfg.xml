@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+     <!-- Database connection settings -->  
+     	<!-- 数据库配置 -->
+     <!-- 
+       <property name="connection.driver_class">com.mysql.jdbc.Driver</property>  
+        <property name="connection.url">jdbc:mysql://192.168.11.169:3306/oaback</property>  
+        <property name="connection.username">root</property>  
+        <property name="connection.password">258790</property>
+      -->
+       <!-- hibernate配置 -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <!-- 可以将向数据库发送的SQL语句显示出来 -->
+		<property name="hibernate.show_sql">true</property>
+		<!-- 格式化SQL语句 -->
+		<property name="hibernate.format_sql">true</property>
+        <property name="javax.persistence.validation.mode">none</property>   
+        <property name="connection.pool_size">10</property>  
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>  
+       <!--  <property name="format_sql">true</property> -->  
+        <property name="hbm2ddl.auto">create</property>  
+        <property name="hbm2ddl.auto">update</property> 
+        
+        <mapping resource="entity/Account.hbm.xml"/>
+         <mapping resource="entity/User.hbm.xml"/>
+    </session-factory>
+    
+</hibernate-configuration>

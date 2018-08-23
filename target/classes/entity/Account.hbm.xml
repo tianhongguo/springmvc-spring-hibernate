@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="entity.Account" table="account" catalog="oa1_2">
+        <id name="id" type="java.lang.Long">
+            <column name="id" />
+            <generator class="identity" />
+        </id>
+        <property name="accountName" type="java.lang.String">
+            <column name="account_name" length="50" />
+        </property>
+        <property name="accountType" type="java.lang.Integer">
+            <column name="account_type" />
+        </property>
+        <property name="accountNumber" type="java.lang.String">
+            <column name="account_number" length="50" />
+        </property>
+        <property name="amounts" type="java.lang.Double">
+            <column name="amounts" />
+        </property>
+        <property name="createrId" type="java.lang.Long" update="false">
+            <column name="creater" />
+        </property>
+        <property name="createTime" type="java.lang.Long" update="false">
+            <column name="create_time" />
+        </property>
+        <property name="updaterId" type="java.lang.Long">
+            <column name="updater" />
+        </property>
+        <property name="updateTime" type="java.lang.Long">
+            <column name="update_time" />
+        </property>
+        <property name="isActive" type="java.lang.Character">
+            <column name="is_active" length="1" />
+        </property>
+        
+    </class>
+</hibernate-mapping>
